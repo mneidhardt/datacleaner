@@ -4,7 +4,7 @@
 # If found, add $new as new column,
 # and if not found, add the column itself as new column.
 
-my $colno = 3;   # Which column to search in.
+my $colno = 1;   # Which column to search in.
 my @old = ('Her-by', 'Ejby', 'herby');	# The possible strings that wil trigger a replacement.
 my $new = 'REST';   # The replacement if one of @old is found.
 
@@ -28,7 +28,7 @@ while (<>) {
   my $found=0;
 
   foreach my $oldname (@old) {
-    if ($parts[$colno] =~ /$oldname/i) {
+    if ($parts[$colno] =~ /^\s*$oldname\s*$/i) {
         push(@parts, $new);
         $found = 1;
         last;
