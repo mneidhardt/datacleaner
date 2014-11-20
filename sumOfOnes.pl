@@ -45,7 +45,6 @@ while (<>) {
     }
 
     unless ($startdatefound) {
-        print "$parts[0] =? $fromdate\n";
         if ($fromdate eq $parts[0]) {
             $startdatefound = 1;
         }
